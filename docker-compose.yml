@@ -1,12 +1,12 @@
-version: '2.1'
+version: '2'
 
-networks:
-  monitor-net:
-    driver: bridge
+#networks:
+#  monitor-net:
+#    driver: bridge
 
-volumes:
-    prometheus_data: {}
-    grafana_data: {}
+#volumes:
+#    prometheus_data: {}
+#    grafana_data: {}
 
 services:
 
@@ -81,6 +81,8 @@ services:
     restart: unless-stopped
     expose:
       - 3000
+    ports:
+      - 9001:3000
     networks:
       - monitor-net
     labels:
